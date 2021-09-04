@@ -1,27 +1,23 @@
-# ChallengeCoodesh
+# Front-End Challenge 20201209 (ChallengeCoodesh)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
+Esse projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 11.2.1.
 
-## Development server
+## :bookmark: Resumo
+<br />
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Sistema web para facilitar a gestão e visualização da informação de pacientes de maneira simples e objetiva em um Dashboard onde podem listar, filtrar e expandir os dados disponíveis.
 
-## Code scaffolding
+<br />
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## :wrench: Colocando o projeto para rodar
+<br />
 
-## Build
+Para colocar o projeto para rodar, basta seguir o passo a passo fornecido logo abaixo:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- 1º: Tenha o NODE instalado na sua máquina;
+- 2º: Faça o download ou o clone deste projeto;
+- 3º: Com o terminal/prompt abra o diretório deste projeto e execute o comando `npm run` ou `yarn`;
+- 7º: Após finalizado as instalações das dependências, digite no terminal `npm run dev` ou `yarn dev`;
+- 8º: Pronto tudo configurado, bora codar!;
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<br />
