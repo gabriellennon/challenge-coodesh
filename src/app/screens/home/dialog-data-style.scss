@@ -1,0 +1,46 @@
+.image-user{
+    display: flex;
+    justify-content: center;
+
+    img{
+        border-radius: 50%;
+        
+    }
+}
+
+h1{
+    margin: 20px 90px;
+    font-family: Heebo;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 35px;
+    text-align: left;
+    color: var(--dark);
+}
+
+.content-infos{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    .box-info{
+        label{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 24px;
+            color: #0A2261;
+        }
+
+        p{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 26px;
+            color: var(--dark);
+            margin-top: 15px;
+        }
+    }
+}

@@ -1,0 +1,168 @@
+.container {
+    background: #ecf0f2;
+    padding: 20px 150px;
+    min-height: calc(100% - 100px);
+
+    h1 {
+        font-family: Heebo;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 35px;
+        text-align: left;
+        color: var(--dark);
+        margin: 50px 0 20px 0;
+    }
+
+    .search {
+        margin: 20px 0;
+
+        input {
+            width: 100%;
+            padding: 5px 10px;
+            border-radius: 4px;
+            border: 2px solid #9ba5ae;
+            box-sizing: border-box;
+            background: #ffffff;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 24px;
+            color: var(--dark);
+
+            &::placeholder {
+                font-style: italic;
+                color: #a4a2a298;
+            }
+        }
+    }
+
+    .loading {
+        background: #ffffff;
+        padding: 50px 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            font-family: Heebo;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--dark);
+            margin: 20px 0;
+        }
+    }
+
+    .content-table {
+        padding: 30px;
+        margin-top: 30px;
+        background: #ffffff;
+        box-shadow: 0px 14px 16px rgba(0, 0, 0, 0.11);
+        border-radius: 4px;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+
+            thead {
+                
+                tr {
+                    td {
+                        font-family: Roboto;
+                        font-style: normal;
+                        font-size: 16px;
+                        line-height: 15px;
+                        font-weight: 700;
+                        color: #55636E;
+                        padding: 18px;
+                        // background: #C3CFD9;
+                        img{
+                            width: 18px;
+                            transform: rotate(0deg);
+                            transition: all 0.5s ease-in-out;
+                            &.sortIcon {
+                            transform: rotate(180deg);
+                            }
+                        }
+
+                        &:hover{
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    td {
+                        font-weight: 300;
+                        color: #000;
+                        padding: 20px;
+                        vertical-align: middle;
+                        // background: #f6faff;
+                        img {
+                            &:nth-child(1) {
+                                padding: 0 30px 0 5px;
+                            }
+
+                            &:hover {
+                                cursor: pointer;
+                            }
+                        }
+
+                        button{
+                            font-family: Roboto;
+                            font-style: normal;
+                            font-weight: bold;
+                            font-size: 14px;
+                          
+                            border-radius: 4px;
+                            box-sizing: border-box;
+                          
+                            padding: 6px 12px 6px 12px;
+                            background: #2175d6;
+                            color: #ffffff;
+                            border: none;
+
+                            &:hover{
+                                cursor: pointer;
+                                filter: brightness(1.1);
+                            }
+                        }
+                    }
+                    &:nth-child(2n + 1) {
+                        background-color: #eaeef0;
+                    }
+                }
+            }
+        }
+
+        .finishTable {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            // background: #f6faff;
+            // border-radius: 0 0 6px 6px;
+            // padding: 0 16px;
+
+            h3 {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 15px;
+                color: var(--dark);
+                margin: 0;
+            }
+
+            .paginator ::ng-deep .ngx-pagination .current {
+                background: #FF9100;
+                border-radius: 4px;
+                color: #FFFFFF;
+            }
+            .paginator ::ng-deep .ngx-pagination li {
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 15px;
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+<div class="image-user" mat-dialog-title>
+  <img src={{data.picture.large}} alt="Foto do usuário" />
+</div>
+<div mat-dialog-content>
+  <h1>{{fullName}}</h1>
+  <div class="content-infos">
+    <div class="box-info">
+      <label>E-mail</label>
+      <p>{{data.email}}</p>
+    </div>
+    <div class="box-info">
+      <label>Gênero</label>
+      <p>{{data.gender === 'male' ? 'Masculino' : 'Feminino'}}</p>
+    </div>
+    <div class="box-info">
+      <label>Data de nascimento</label>
+      <p>{{dateFormatted}}</p>
+    </div>
+    <div class="box-info">
+      <label>Telefone</label>
+      <p>{{data.phone}}</p>
+    </div>
+    <div class="box-info">
+      <label>Nacionalidade</label>
+      <p>{{data.location.country}}</p>
+    </div>
+    <div class="box-info">
+      <label>Endereço</label>
+      <p>{{data.location.street.name}}</p>
+      <p>{{data.location.street.number}}</p>
+    </div>
+    <div class="box-info">
+      <label>ID (Número de Identificação)</label>
+      <!-- Em alguns usuarios o id vem null -->
+      <p>{{data.id.value ? data.id.value : 'Não registrado'}}</p>
+    </div>
+  </div>
+</div>

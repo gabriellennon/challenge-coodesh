@@ -1,0 +1,64 @@
+<div class="container">
+    <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro doloremque quas nostrum saepe, modi vel corporis culpa nemo vero inventore accusamus reprehenderit deserunt totam exercitationem. Debitis officia nostrum esse! Maxime?</h1>
+    <div class="search">
+        <form>
+          <div class="filter">
+            <label>Nacionalidade</label>
+            <select name="nacion" #n (change)="onChange(n.value)">
+              <option value="">Todos</option>
+              <ng-container *ngFor="let item of dataTable.results">
+                <option [value]="item.location.country" >{{item.location.country}}</option>
+              </ng-container>
+            </select>
+          </div>
+          <input type="text" name="search" placeholder="Pesquisar por" />
+        </form>
+    </div>
+    <div class="content-table">
+
+        <ng-container *ngIf="!loading">
+          <table>
+            <thead>
+              <tr>
+                <td (click)="sortData('name')">
+                  Nome
+                  <img src="../../../assets/icons/arrow-table.svg" alt="ícone de seta para ordenar tabela" [class.sortIcon]="!item.sort" />
+                </td>
+                <td (click)="sortData('gender')">
+                  Gênero
+                  <img src="../../../assets/icons/arrow-table.svg" alt="ícone de seta para ordenar tabela" [class.sortIcon]="!item.sort" />
+                </td>
+                <td (click)="sortData('birthday')">
+                  Data de Nascimento
+                  <img src="../../../assets/icons/arrow-table.svg" alt="ícone de seta para ordenar tabela" [class.sortIcon]="!item.sort" />
+                </td>
+                <td>Ação</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of dataTable.results | paginate: { itemsPerPage: 10, currentPage: p} ">
+                <td>{{item.name.first}}</td>
+                <td>{{item.gender === 'male' ? 'Masculino' : 'Feminino'}}</td>
+                <td>{{item.dob.date | date:"dd/MM/yyyy"}}</td>
+                <td><button (click)="openDialog(item)">Visualizar</button></td>
+              </tr>
+            </tbody>
+          </table>
+  
+          <div class="finishTable" *ngIf="!loadingTable && !tableError">
+            <h3>Total: {{dataTable.results.length.toLocaleString('pt-BR')}}</h3>
+            <div class="paginator" id="paginator">
+                <pagination-controls (pageChange)="p = $event" nextLabel="Próximo" previousLabel="Anterior">
+                </pagination-controls>
+            </div>
+          </div>
+        </ng-container>
+        <div class="loading" *ngIf="loading">
+          <mat-spinner
+            strokeWidth=50
+            strokeWidth=4
+          ></mat-spinner>
+          <p>Carregando...</p>
+        </div>
+    </div>
+</div>
