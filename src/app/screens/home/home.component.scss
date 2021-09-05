@@ -14,24 +14,72 @@
     }
 
     .search {
-        margin: 20px 0;
+        margin: 30px 0;
 
-        input {
-            width: 100%;
-            padding: 5px 10px;
-            border-radius: 4px;
-            border: 2px solid #9ba5ae;
-            box-sizing: border-box;
-            background: #ffffff;
-            font-weight: normal;
-            font-size: 16px;
-            line-height: 24px;
-            color: var(--dark);
+        form{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
-            &::placeholder {
-                font-style: italic;
-                color: #a4a2a298;
+            label {
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: bold;
+                font-size: 14px;
+                color: var(--dark);
+                margin-bottom: 10px;
             }
+
+            .search-div{
+                display: flex;
+                flex-direction: column;
+                width: 60%;
+
+                input {
+                    width: 100%;
+                    padding: 5px 10px;
+                    border-radius: 4px;
+                    border: 1px solid #e5e5e5;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    box-sizing: border-box;
+                    background: #ffffff;
+                    font-weight: normal;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: var(--dark);
+        
+                    &::placeholder {
+                        font-style: italic;
+                        color: #a4a2a298;
+                    }
+                }
+            }
+
+            .filter{
+                display: flex;
+                flex-direction: column;
+                width: 38%;
+
+                select{
+                    &:hover {
+                        cursor: pointer;
+                    }
+                    font-family: "Roboto";
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 18px;
+                    line-height: 21px;
+                    color: #50555a;
+                    background: var(--white);
+                    border: 1px solid #e5e5e5;
+                    box-sizing: border-box;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    border-radius: 6px;
+                    padding: 7px 0 5px 7px;
+                    width: 100%;
+                }
+            }
+
         }
     }
 
