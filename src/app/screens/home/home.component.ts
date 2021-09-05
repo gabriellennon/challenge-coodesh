@@ -3,6 +3,9 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { HomeService } from 'src/app/core/services/home.service';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { tap, map, filter, distinctUntilChanged, debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -20,6 +23,13 @@ export class HomeComponent implements OnInit {
   ascName: boolean = true;
   ascGender: boolean = true;
   ascBirthday: boolean = true;
+  results$: Observable<any>;
+
+  filterForm = new FormGroup({
+    // search: new FormControl(""),
+  });
+
+  search = new FormControl("");
 
   constructor(
     public dialog: MatDialog,
@@ -28,6 +38,26 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getData();
+    this.search.valueChanges.pipe(
+      //eliminando os espacos
+      map(value => value.trim()),
+      //Colocando um mínimo de caracteres para ele pesquisar
+      // filter(value => value.length > 1),
+      //Aplicando um delay
+      debounceTime(200),
+      //Tirando pesquisas repetidas, ignorando os valores repetidos
+      distinctUntilChanged(),
+      tap(value => {
+        let tratamentoSearch = this.dataTable.results;
+        if(value !== ""){
+          console.log(value)
+          let campoSearch = value.toLowerCase();
+          this.dataTable.results = tratamentoSearch.filter(e => (e.name.first.toLowerCase().includes(campoSearch) || e.location.country.toLowerCase().includes(campoSearch) ))
+        }else{
+          this.getData();
+        }
+      }),
+    ).subscribe()
   }
 
   getData() {

@@ -1,7 +1,7 @@
 <div class="container">
     <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro doloremque quas nostrum saepe, modi vel corporis culpa nemo vero inventore accusamus reprehenderit deserunt totam exercitationem. Debitis officia nostrum esse! Maxime?</h1>
     <div class="search">
-        <form>
+        <form [formGroup]="filterForm">
           <div class="filter">
             <label>Nacionalidade</label>
             <select name="nacion" #n (change)="onChange(n.value)">
@@ -11,7 +11,7 @@
               </ng-container>
             </select>
           </div>
-          <input type="text" name="search" placeholder="Pesquisar por" />
+          <input type="text" name="search"  id="search" [formControl]="search" placeholder="Pesquisar por" />
         </form>
     </div>
     <div class="content-table">

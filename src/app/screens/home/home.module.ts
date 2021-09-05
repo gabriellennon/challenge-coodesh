@@ -7,6 +7,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ComponentsModule } from 'src/app/components/components.module';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -17,7 +18,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     MatDialogModule,
     MatProgressSpinnerModule,
     ComponentsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [HomeComponent]
 })
