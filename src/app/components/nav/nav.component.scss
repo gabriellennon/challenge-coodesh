@@ -32,14 +32,13 @@
   display: flex;
   align-items: center;
   height: 100%;
-  padding: 20px;
   cursor: pointer;
   border-bottom: 2px solid transparent;
   transition: border 250ms ease;
   svg {
     margin-right: 5px;
     path {
-      fill: red;
+      fill: var(--dark);
     }
   }
   a {
@@ -48,7 +47,7 @@
     font-weight: bold;
     font-size: 13px;
     line-height: 16px;
-    color: red;
+    color: var(--dark);
     text-decoration: none;
   }
   a:hover {
